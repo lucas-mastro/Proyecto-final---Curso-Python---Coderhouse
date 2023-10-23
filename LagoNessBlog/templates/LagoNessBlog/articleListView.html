@@ -1,0 +1,31 @@
+{% extends "LagoNessBlog/base.html" %}
+{% load static %}
+
+{% block section1 %}
+
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">See below all articles for this category:</h1>
+
+            {% for a in object_list %}
+
+            <li>{{a}}
+                <button><a href="{% url 'Delete' a.id %}"> Delete</a> </button>
+                <button><a href="{% url 'Update' a.id %}"> Edit</a> </button>
+                <button><a href="{% url 'Detail' a.id %}"> Read more</a> </button>
+
+
+            </li>
+
+            {% endfor %}
+
+            <p class="lead mb-2"> <b>Do you want to create a new article? </b></p>
+            <a href="{% url 'New' %}"><button type="submit" class="btn btn-primary">Click here!</button></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</header>
+
+{% endblock section1%}

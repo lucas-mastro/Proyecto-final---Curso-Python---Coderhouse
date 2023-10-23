@@ -1,0 +1,50 @@
+{% extends "LagoNessBlog/base.html" %}
+{% load static %}
+
+{% block section1 %}
+
+<br>
+<br>
+
+
+<div class="container">
+    <h2 class="text-center text-dark">
+        About me
+    </h2>
+    <br>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-success">
+                <div class="card-body text-center">
+                    <img src="{% static 'LagoNessBlog/images/lm.jpg' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Lucas Mastronunzio</h3>
+                    <p class="card-text">A Public Accountant who figured out software development!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="">
+                <div class="text-center">
+                    <p>Hi, I'm Lucas. <br>
+                        <br>
+                        This is my first project to put my hands in practice.<br>
+                        <br>
+                        To kick off my learning path, I've built this blog where users can publish and read articles
+                        from whatever they want.<br>
+                        <br>
+                        For the moment, this website only shows categories such as Travelling, Sports, YouTube and
+                        Others, but we will have more soon!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{% endblock section1%}

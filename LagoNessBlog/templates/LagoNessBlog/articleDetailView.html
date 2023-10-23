@@ -1,0 +1,32 @@
+{% extends "LagoNessBlog/base.html" %}
+{% load static %}
+
+{% block section1 %}
+
+
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">See the details of selected article:</h1>
+
+
+
+            <h1><i>{{ article.name }}</i></h1>
+            <p>Category: <i>{{ article.category }}</i></p>
+            <p>Description: <i>{{ article.description }}</i></p>
+            <p>Contact: <i>{{ article.emailContact }}</i></p>
+            <p>Image: <i>{{ article.image }}</i></p>
+
+            <a href="{% url 'List' %}">Back to List</a>
+
+
+            <p class="lead mb-2"> <b>Do you want to create a new article? </b></p>
+
+            <a href="{% url 'New' %}"><button type="submit" class="btn btn-primary">Click here!</button></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</header>
+
+{% endblock section1%}

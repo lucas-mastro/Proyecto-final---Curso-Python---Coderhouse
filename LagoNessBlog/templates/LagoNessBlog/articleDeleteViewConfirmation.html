@@ -1,0 +1,30 @@
+{% extends "LagoNessBlog/base.html" %}
+
+
+{% load static %}
+
+{% block main %}
+
+<br>
+<br>
+
+<div class="container">
+    <h1 class="text-center">You will delete this record. Are you sure?</h1>
+    <div class="form-group">
+
+        <form action="" style=" width: 50vw; margin-left : 15vw;" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="container text-center">
+                <button type="submit" class="btn btn-primary"> Yes, delete </button>
+        </form>
+
+    </div>
+</div>
+
+<a href="{% url 'List' %}">Back to List</a>
+
+<br>
+<br>
+
+{% endblock main %}

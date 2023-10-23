@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Lago Ness Blog</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'LagoNessBlog/images/favicon.ico' %}" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'LagoNessBlog/css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'Home' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'New' %}">Create
+                            new article!</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'List' %}">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'List' %}">Travelling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'List' %}">YouTube</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'List' %}">Others</a></li>
+                    {% if not request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Login' %}">Log
+                            in</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="{% url 'Logout' %}">Logout</a></li>
+                    {% if not request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="{% url 'Register' %}">Register</a></li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'EditUser' %}">Edit user</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AboutMe' %}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block main %}
+    {% endblock main %}
+
+    {% block section1 %}
+    {% endblock section1 %}
+
+
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Lago Ness Blog 2023</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+
+</html>

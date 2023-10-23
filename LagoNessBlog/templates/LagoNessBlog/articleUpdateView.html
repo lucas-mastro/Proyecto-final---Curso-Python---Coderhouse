@@ -1,0 +1,31 @@
+{% extends "LagoNessBlog/base.html" %}
+
+
+{% load static %}
+
+{% block main %}
+
+<br>
+<br>
+
+<div class="container">
+    <h1 class="text-center">Edit your article!</h1>
+    <div class="form-group">
+        <form action="" style=" width: 50vw; margin-left : 15vw;" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            {{ form.as_p }}
+
+
+
+            <div class="container text-center">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+    </div>
+</div>
+
+<br>
+<br>
+
+{% endblock main %}

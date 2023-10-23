@@ -1,0 +1,24 @@
+{% extends "LagoNessBlog/base.html" %}
+{% load static %}
+
+{% block section1 %}
+
+
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Welcome to Lago Ness Blog!</h1>
+            <p class="lead mb-6">A blog about a lot and nothing at the same time...</p>
+
+            <h2>{{ notification }}</h2>
+
+
+            <p class="lead mb-2"> <b>Do you want to create a new article? </b></p>
+            <a href="{% url 'New' %}"><button type="submit" class="btn btn-primary">Click here!</button></a>
+        </div>
+    </div>
+    </div>
+    </div>
+</header>
+
+{% endblock section1%}
